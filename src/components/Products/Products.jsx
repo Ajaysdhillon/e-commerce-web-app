@@ -1,8 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core";
 const products = [
-  { id: 1, name: "Shoes", description: "Running shoes" },
-  { id: 2, name: "Mackbook", description: "Apple mackbook" },
+  { id: 1, name: "Shoes", description: "Running shoes", price: "$5" },
+  { id: 2, name: "Mackbook", description: "Apple mackbook", price: "$15" },
 ];
 const Products = () => {
   <main>
