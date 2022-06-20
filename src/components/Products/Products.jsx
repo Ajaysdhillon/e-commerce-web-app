@@ -15,7 +15,7 @@ const products = [
     id: 2,
     name: "Mackbook",
     description: "Apple mackbook",
-    price: "$15",
+    price: "$150",
     image:
       "https://in.images.search.yahoo.com/search/images;_ylt=AwrxzAGCtbBirSwAUW.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=macbbok&fr2=piv-web&type=E211IN1274G0&fr=mcafee#id=5&iurl=https%3A%2F%2Fi5.walmartimages.com%2Fasr%2Fd7dd917d-49d4-4c4a-a769-e81071720765.6fbb62b3b6a44fc4ab63066bb9dab8fe.jpeg&action=click",
   },
