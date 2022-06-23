@@ -32,9 +32,7 @@ const Product = ({ product }) => {
             dangerouslySetInnerHtml={{ __html: product.description }}
             variant="body2"
             color="textSecondary"
-          >
-            {product.description}
-          </Typography>
+          />
         </div>
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
