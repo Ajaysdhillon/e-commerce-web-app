@@ -14,8 +14,8 @@ function App() {
   }, []);
   return (
     <div>
-      <Products />
       <Navbar />
+      <Products products={products} />
     </div>
   );
 }
