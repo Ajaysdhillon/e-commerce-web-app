@@ -1,8 +1,10 @@
 import React from "react";
 import { Container, Typography, Button, Grid } from "@material-ui/core";
-import { CallMissedSharp } from "@material-ui/icons";
+
+import useStyles from "./styles";
 const Cart = ({ cart }) => {
-  const isEmpty = !cart.line_items.length;
+  const isEmpty = !cart.line_tems.length;
+  const classes = useStyles();
   const EmptyCart = () => {
     <Typography variant="subtitle1">
       You have no items in your shopping cart. Add some!!
