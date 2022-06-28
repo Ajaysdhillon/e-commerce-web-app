@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import {
   Typography,
   Button,
@@ -10,7 +10,13 @@ import {
 
 import useStyles from "./styles";
 const cartItem = () => {
-  return <div></div>;
+  const classes = useStyles();
+
+  return (
+    <Card>
+      <CardMedia image={item.media.source} />
+    </Card>
+  );
 };
 
 export default cartItem;
