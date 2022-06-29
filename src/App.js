@@ -34,7 +34,7 @@ function App() {
           <Route exact path="/">
             <Products products={products} onAddToCart={handleAddToCart} />
           </Route>
-          <Route>
+          <Route exact path="/cart">
             <Cart cart={cart} />
           </Route>
         </Routes>
