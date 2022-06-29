@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { commerce } from "./lib/commerce";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
@@ -26,11 +27,19 @@ function App() {
     fetchCart();
   }, []);
   return (
-    <div>
-      <Navbar totalItems={cart.total_items} />
-      {/*<Products products={products} onAddToCart={handleAddToCart} />*/}
-      <Cart cart={cart} />
-    </div>
+    <Router>
+      <div>
+        <Navbar totalItems={cart.total_items} />
+        <Routes>
+          <Route exact path="/">
+            <Products products={products} onAddToCart={handleAddToCart} />
+          </Route>
+          <Route>
+            <Cart cart={cart} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
