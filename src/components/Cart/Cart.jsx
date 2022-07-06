@@ -3,7 +3,12 @@ import { Container, Typography, Button, Grid } from "@material-ui/core";
 import cartItem from "./CartItem/cartItem";
 import useStyles from "./styles";
 import { Link } from "react-router-dom";
-const Cart = ({ cart }) => {
+const Cart = ({
+  cart,
+  handleUpdateCartQty,
+  handleRemoveFromCart,
+  handleEmptyCart,
+}) => {
   const classes = useStyles();
   const EmptyCart = () => {
     <Typography variant="subtitle1">
