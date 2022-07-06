@@ -23,8 +23,18 @@ function App() {
   };
 
   const handleUpdateCardQty = async (productId, quantity) => {
-    const response = await commerce.cart.update(productId, { quantity });
-    setCart(response.cart);
+    const { cart } = await commerce.cart.update(productId, { quantity });
+    setCart(cart);
+  };
+
+  const handleRemoveFromCart = async (productId) => {
+    const { cart } = await commerce.cart.remove(productId);
+    setCart(cart);
+  };
+
+  const handleEmptyCart = async () => {
+    const { cart } = await commerce.cart.empty();
+    setCart(cart);
   };
   console.log(cart);
   useEffect(() => {
