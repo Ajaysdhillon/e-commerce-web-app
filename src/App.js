@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { commerce } from "./lib/commerce";
 import Products from "./components/Products/Products";
+import Checkout from "./components/CheckoutForm/Checkout";
 import Cart from "./components/Cart/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
