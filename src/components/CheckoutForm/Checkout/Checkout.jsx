@@ -27,15 +27,21 @@ const Checkout = () => {
         const token = await commerce.checkout.generateToken(cart.id, {
           type: "cart",
         });
+        setCheckoutToken(token);
       } catch (error) {}
     };
+    generateToken();
   }, []);
 
   const Confirmation = () => {
     <div>Confirmation</div>;
   };
   const Form = ({ cart }) =>
-    activeStep === 0 ? <AddressForm /> : <PaymentForm />;
+    activeStep === 0 ? (
+      <AddressForm checkoutToken={checkoutToken} />
+    ) : (
+      <PaymentForm />
+    );
   return (
     <>
       <div className={classes.toolbar} />
