@@ -19,11 +19,14 @@ const steps = ["Shipping address", "Payment details"];
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0);
   const classes = useStyles();
+  const [checkoutToken, setCheckoutToken] = useState(null);
 
   useEffect(() => {
     const generateToken = async () => {
       try {
-        const token = await commerce.checkout.generateToken();
+        const token = await commerce.checkout.generateToken(cart.id, {
+          type: "cart",
+        });
       } catch (error) {}
     };
   }, []);
@@ -31,14 +34,15 @@ const Checkout = () => {
   const Confirmation = () => {
     <div>Confirmation</div>;
   };
-  const Form = () => (activeStep === 0 ? <AddressForm /> : <PaymentForm />);
+  const Form = ({ cart }) =>
+    activeStep === 0 ? <AddressForm /> : <PaymentForm />;
   return (
     <>
       <div className={classes.toolbar} />
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography variant="h4" align="center">
-            Checkout
+            Checkout cart={cart}
           </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map((step) => (
