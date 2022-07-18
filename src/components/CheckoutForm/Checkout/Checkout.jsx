@@ -20,7 +20,7 @@ const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0);
   const classes = useStyles();
   const [checkoutToken, setCheckoutToken] = useState(null);
-
+  const [shippingData, setShippingData] = useState(0);
   useEffect(() => {
     const generateToken = async () => {
       try {
@@ -32,6 +32,10 @@ const Checkout = () => {
     };
     generateToken();
   }, [cart]);
+
+  const next = (data) => {
+    setShippingData(data);
+  };
 
   const Confirmation = () => {
     <div>Confirmation</div>;
