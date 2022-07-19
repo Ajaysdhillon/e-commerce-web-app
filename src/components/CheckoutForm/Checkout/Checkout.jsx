@@ -16,7 +16,7 @@ import { commerce } from "../../lib/commerce";
 
 const steps = ["Shipping address", "Payment details"];
 
-const Checkout = () => {
+const Checkout = ({ cart }) => {
   const [activeStep, setActiveStep] = useState(0);
   const classes = useStyles();
   const [checkoutToken, setCheckoutToken] = useState(null);
@@ -38,6 +38,7 @@ const Checkout = () => {
 
   const next = (data) => {
     setShippingData(data);
+    nextStep();
   };
 
   const Confirmation = () => {
@@ -49,7 +50,7 @@ const Checkout = () => {
         checkoutToken={checkoutToken}
         nextStep={nextStep}
         setShippingData={setShippingData}
-        test={test}
+        next={next}
       />
     ) : (
       <PaymentForm
