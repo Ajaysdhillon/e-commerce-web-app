@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { CssBaseline } from "@material-ui/core";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Navbar, Products, Cart, Checkout } from "./components";
+
 import { commerce } from "./lib/commerce";
 
 const App = () => {
@@ -82,7 +83,7 @@ const App = () => {
           totalItems={cart.total_items}
           handleDrawerToggle={handleDrawerToggle}
         />
-        <Switch>
+        <Routes>
           <Route exact path="/">
             <Products
               products={products}
@@ -106,7 +107,7 @@ const App = () => {
               error={errorMessage}
             />
           </Route>
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );
