@@ -10,10 +10,10 @@ import {
   Divider,
   Button,
 } from "@material-ui/core";
-import { Link, useHistory } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 import { commerce } from "../../../lib/commerce";
-import AddressForm from "../AddressForm";
+import AddressForm from "./AddressForm";
 import PaymentForm from "../PaymentForm";
 import useStyles from "./styles";
 
@@ -24,7 +24,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [shippingData, setShippingData] = useState({});
   const classes = useStyles();
-  const history = useHistory();
+  const history = useNavigate();
 
   const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
   const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
