@@ -20,7 +20,7 @@ const Product = ({ product, onAddToCart }) => {
     <Card className={classes.root}>
       <CardMedia
         className={classes.media}
-        image={product.image.url}
+        image={product.media.source}
         title={product.name}
       />
       <CardContent>
@@ -29,7 +29,7 @@ const Product = ({ product, onAddToCart }) => {
             {product.name}
           </Typography>
           <Typography gutterBottom variant="h5" component="h2">
-            Rs{product.price.formatted}
+            ${product.price.formatted}
           </Typography>
         </div>
         <Typography
@@ -40,10 +40,7 @@ const Product = ({ product, onAddToCart }) => {
         />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton
-          aria-label="Add to Cart"
-          onClick={() => onAddToCart(product.id, 1)}
-        >
+        <IconButton aria-label="Add to Cart" onClick={handleAddToCart}>
           <AddShoppingCart />
         </IconButton>
       </CardActions>
